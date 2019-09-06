@@ -1,5 +1,5 @@
 from DB import update_mods, new_task, select_mods
-from Config import ModulesDirectory
+from project.Config import ModulesDirectory
 import os
 
 

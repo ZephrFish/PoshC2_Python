@@ -5,7 +5,7 @@ from Utils import validate_sleep_time
 from DB import new_task, update_sleep, unhide_implant, kill_implant, get_implantdetails, get_pid, new_c2_message
 from AutoLoads import check_module_loaded
 from Help import py_help1
-from Config import ModulesDirectory, PayloadsDirectory, ROOTDIR
+from project.Config import ModulesDirectory, PayloadsDirectory, ROOTDIR
 from Utils import argp
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory

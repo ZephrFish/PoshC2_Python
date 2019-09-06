@@ -6,10 +6,18 @@ else
      POSH_DIR=${POSHC2_DIR}
 fi
 
+if [[ ! -d "$POSH_DIR/project" ]]; then
+    mkdir "$POSH_DIR/project"
+fi
+
+if [[ ! -f "$POSH_DIR/project/Config.py" ]]; then
+    cp "$POSH_DIR/Config.py" "$POSH_DIR/project/Config.py"
+fi
+
 if [[ "$EDITOR" != "" ]]; then
-    $EDITOR "$POSH_DIR/Config.py"
+    $EDITOR "$POSH_DIR/project/Config.py"
 elif [[ "$*" == *"--nano"* ]]; then
-    nano "$POSH_DIR/Config.py"
+    nano "$POSH_DIR/project/Config.py"
 else
-    vim "$POSH_DIR/Config.py"
+    vim "$POSH_DIR/project/Config.py"
 fi

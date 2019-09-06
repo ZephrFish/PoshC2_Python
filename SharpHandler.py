@@ -5,7 +5,7 @@ from Utils import validate_sleep_time
 from DB import new_task, update_sleep, update_label, unhide_implant, kill_implant, get_implantdetails, get_sharpurls, select_item, new_c2_message
 from AutoLoads import check_module_loaded, run_autoloads_sharp
 from Help import sharp_help1
-from Config import POSHDIR, ROOTDIR, SocksHost, PayloadsDirectory
+from project.Config import POSHDIR, ROOTDIR, SocksHost, PayloadsDirectory
 from Utils import argp, load_file, gen_key
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory

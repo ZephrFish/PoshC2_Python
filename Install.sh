@@ -2,10 +2,11 @@
 
 # Install PoshC2
 echo ""
-echo """ __________            .__.     _________  ________
+echo """ 
+   __________            .__.     _________  ________
    \_______  \____  _____|  |__   \_   ___ \ \_____  \\
     |     ___/  _ \/  ___/  |  \  /    \  \/  /  ____/
-    |    |  ( <_>)___ \|   Y  \ \     \____/       \\
+    |    |   ( <_>)___  \|   Y  \ \     \____/       \\
     |____|   \____/____  >___|  /  \______  /\_______ \\
                        \/     \/          \/         \/
     ================= www.PoshC2.co.uk ================"""
@@ -29,7 +30,7 @@ fi
 echo ""
 echo "[+] Installing git & cloning PoshC2_Python into /opt/PoshC2_Python/"
 apt-get install -y git
-git clone https://github.com/nettitude/PoshC2_Python /opt/PoshC2_Python/
+git clone --branch docker https://github.com/nettitude/PoshC2_Python /opt/PoshC2_Python/
 
 # Install requirements for PoshC2_Python
 echo ""
@@ -52,7 +53,7 @@ fi
 
 echo ""
 echo "[+] Installing requirements using pip"
-echo "[+] python -m pip install -r /opt/PoshC2_Python/requirements.txt"
+echo "[+] python3 -m pip install -r /opt/PoshC2_Python/requirements.txt"
 echo ""
 python3 -m pip install --upgrade pip > /dev/null
 python3 -m pip install pandas pipenv > /dev/null
@@ -70,6 +71,11 @@ cp /opt/PoshC2_Python/Files/posh-log /usr/bin
 cp /opt/PoshC2_Python/Files/posh-service /usr/bin
 cp /opt/PoshC2_Python/Files/posh-stop-service /usr/bin
 cp /opt/PoshC2_Python/Files/posh-update /usr/bin
+cp /opt/PoshC2_Python/Files/posh-docker /usr/bin
+cp /opt/PoshC2_Python/Files/posh-docker-server /usr/bin
+cp /opt/PoshC2_Python/Files/posh-docker-entrypoint /usr/bin
+cp /opt/PoshC2_Python/Files/posh-docker-build /usr/bin
+cp /opt/PoshC2_Python/Files/posh-docker-clean /usr/bin
 chmod +x /usr/bin/fpc
 chmod +x /usr/bin/posh
 chmod +x /usr/bin/posh-server
@@ -78,9 +84,18 @@ chmod +x /usr/bin/posh-log
 chmod +x /usr/bin/posh-service
 chmod +x /usr/bin/posh-stop-service
 chmod +x /usr/bin/posh-update
+chmod +x /usr/bin/posh-docker
+chmod +x /usr/bin/posh-docker-server
+chmod +x /usr/bin/posh-docker-entrypoint
+chmod +x /usr/bin/posh-docker-build
+chmod +x /usr/bin/posh-docker-clean
 
 echo "[+] Adding service file"
 cp /opt/PoshC2_Python/poshc2.service /lib/systemd/system/poshc2.service
+
+# Creating Project folder
+mkdir /opt/PoshC2_Python/project
+cp /opt/PoshC2_Python/Config.py /opt/PoshC2_Python/project/Config.py
 
 # Install requirements of dotnet core for SharpSocks
 echo ""
@@ -100,11 +115,11 @@ apt-get install -y dotnet-runtime-2.2 dotnet-hostfxr-2.2 dotnet-host
 
 echo ""
 echo "[+] Setup complete"
-echo ""
-echo """ __________            .__.     _________  ________
+echo """\033[92m
+   __________            .__.     _________  ________
    \_______  \____  _____|  |__   \_   ___ \ \_____  \\
     |     ___/  _ \/  ___/  |  \  /    \  \/  /  ____/
-    |    |  ( <_>)___ \|   Y  \ \     \____/       \\
+    |    |   ( <_>)___  \|   Y  \ \     \____/       \\
     |____|   \____/____  >___|  /  \______  /\_______ \\
                        \/     \/          \/         \/
     ================= www.PoshC2.co.uk ================"""
@@ -116,3 +131,4 @@ echo "# posh-server"
 echo "# posh"
 echo ""
 echo "To run as a service use posh-service instead of posh-server"
+echo "\033[0m"

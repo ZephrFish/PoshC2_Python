@@ -1,4 +1,4 @@
-from Config import PayloadsDirectory, QuickCommand, FilesDirectory, DefaultMigrationProcess, POSHDIR
+from project.Config import PayloadsDirectory, QuickCommand, FilesDirectory, DefaultMigrationProcess, POSHDIR
 from Colours import Colours
 from Utils import gen_key, randomuri, formStrMacro, formStr
 import gzip, base64, subprocess, os, hashlib

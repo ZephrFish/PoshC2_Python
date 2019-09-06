@@ -5,7 +5,7 @@ from Utils import validate_sleep_time
 from DB import new_task, update_sleep, get_history, select_item, update_label, unhide_implant, kill_implant, get_implantdetails, get_c2server_all, get_newimplanturl, get_allurls, get_sharpurls, get_cred_by_id, new_c2_message
 from AutoLoads import check_module_loaded, run_autoloads
 from Help import posh_help, posh_help1, posh_help2, posh_help3, posh_help4, posh_help5, posh_help6, posh_help7, posh_help8
-from Config import PayloadsDirectory, POSHDIR, ROOTDIR, SocksHost
+from project.Config import PayloadsDirectory, POSHDIR, ROOTDIR, SocksHost
 from Core import get_creds
 from Opsec import ps_opsec
 from Payloads import Payloads

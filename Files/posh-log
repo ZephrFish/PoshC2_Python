@@ -1,5 +1,11 @@
 #!/bin/bash
 
-tail -n 500 -f /var/log/poshc2_server.log 2>/dev/null\
-	|| ( echo -e "\e[31m[!] Could not open logfile: /var/log/poshc2_server.log\e[0m")
+if [[ -z "${POSHC2_DIR}" ]]; then
+    POSH_DIR="/opt/PoshC2_Python"
+else
+    POSH_DIR=${POSHC2_DIR} 
+fi
+
+tail -n 5000 -f "$POSH_DIR/project/poshc2_server.log" 2>/dev/null\
+	|| ( echo -e "\e[31m[!] Could not open logfile: $POSH_DIR/project/poshc2_server.log\e[0m")
 

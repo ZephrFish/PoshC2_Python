@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Create and edit config if doesn't exist
+if [[ ! -f "/opt/PoshC2_Python/project/Config.py" ]]; then
+    cp "/opt/PoshC2_Python/Config.py" "/opt/PoshC2_Python/project/Config.py"
+    echo "No Config.py was found for this project, one has been created in the project folder, please edit it and relaunch"
+else
+    posh-server
+fi

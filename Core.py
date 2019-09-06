@@ -1,5 +1,5 @@
 import os, base64, random, codecs, glob, readline, re
-from Config import HTTPResponses, POSHDIR, PayloadsDirectory
+from project.Config import HTTPResponses, POSHDIR, PayloadsDirectory
 from Utils import randomuri
 from TabComplete import tabCompleter
 from Help import COMMANDS

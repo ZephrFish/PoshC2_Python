@@ -2,7 +2,7 @@
 
 import sqlite3, re, subprocess, time, cgi
 import pandas as pd
-from Config import HostnameIP, ReportsDirectory, Database
+from project.Config import HostnameIP, ReportsDirectory, Database
 
 
 def replace_tabs(s):

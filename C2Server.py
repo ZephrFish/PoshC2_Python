@@ -10,10 +10,10 @@ from Colours import Colours
 from DB import select_item, get_implants_all, update_implant_lastseen, update_task, get_cmd_from_task_id, get_c2server_all, get_sharpurls
 from DB import update_item, get_task_owner, get_newimplanturl, initializedb, setupserver, new_urldetails, get_baseenckey, insert_cred, get_c2_messages
 from Payloads import Payloads
-from Config import ROOTDIR, ServerHeader, PayloadsDirectory, HTTPResponse, DownloadsDirectory, Database, HostnameIP, SocksHost
-from Config import QuickCommand, KillDate, DefaultSleep, DomainFrontHeader, ServerPort, urlConfig, HOST_NAME, PORT_NUMBER
-from Config import DownloadURI, Sounds, APIKEY, MobileNumber, URLS, SocksURLS, Insecure, UserAgent, Referrer, APIToken
-from Config import APIUser, EnableNotifications
+from project.Config import ROOTDIR, ServerHeader, PayloadsDirectory, HTTPResponse, DownloadsDirectory, Database, HostnameIP, SocksHost
+from project.Config import QuickCommand, KillDate, DefaultSleep, DomainFrontHeader, ServerPort, urlConfig, HOST_NAME, PORT_NUMBER
+from project.Config import DownloadURI, Sounds, APIKEY, MobileNumber, URLS, SocksURLS, Insecure, UserAgent, Referrer, APIToken
+from project.Config import APIUser, EnableNotifications
 from Cert import create_self_signed_cert
 from Help import logopic
 from Utils import validate_sleep_time, randomuri, gen_key
@@ -588,11 +588,10 @@ if __name__ == '__main__':
         print("Initializing new project folder and database" + Colours.GREEN)
         print("")
         directory = os.path.dirname(ROOTDIR)
-        if not os.path.exists(directory):
-            os.makedirs(directory)
-            os.makedirs("%s/downloads" % directory)
-            os.makedirs("%s/reports" % directory)
-            os.makedirs("%s/payloads" % directory)
+        if not os.path.exists(directory): os.makedirs(directory)
+        if not os.path.exists("%s/downloads" % directory): os.makedirs("%s/downloads" % directory)
+        if not os.path.exists("%s/reports" % directory): os.makedirs("%s/reports" % directory)
+        if not os.path.exists("%s/payloads" % directory): os.makedirs("%s/payloads" % directory)
         initializedb()
         if not validate_sleep_time(DefaultSleep):
             print(Colours.RED)

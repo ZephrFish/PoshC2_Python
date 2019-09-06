@@ -7,7 +7,7 @@ from DB import get_newimplanturl, get_implantbyid, get_implants, new_c2_message,
 from DB import get_c2urls, del_autorun, del_autoruns, add_autorun, get_autorun, get_newtasks_all
 from DB import drop_newtasks, get_implanttype, get_history, get_randomuri, get_hostdetails, get_creds, get_creds_for_user, insert_cred
 from Colours import Colours
-from Config import PayloadsDirectory, POSHDIR, ROOTDIR
+from project.Config import PayloadsDirectory, POSHDIR, ROOTDIR
 from HTML import generate_table, graphviz
 from Payloads import Payloads
 from Utils import validate_sleep_time, randomuri, parse_creds
