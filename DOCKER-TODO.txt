@@ -4,3 +4,4 @@
 * Parse Config file on server start and run docker with that port forwarded so don't have to pass it as arg if not 443
 * Expand on docker commands in readme
 * Update documentation on readthedocs
+* Update blog post
