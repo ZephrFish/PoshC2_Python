@@ -12,4 +12,4 @@ else
     project_folder=${POSHC2_PROJDIR} 
 fi
 
-sudo docker run -ti --rm -p "$port":443 -v $project_folder:/opt/PoshC2_Python/project nettitude/poshc2 /bin/bash -c /usr/bin/posh-docker-entrypoint
+sudo docker run -ti --rm -p "$port":443 -v $project_folder:/opt/PoshC2_Python/project nettitude/poshc2 /usr/bin/posh-docker-entrypoint

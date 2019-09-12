@@ -1,0 +1,6 @@
+* Fill out content for Docker ps1 scripts
+* Move Project dir back to /opt/PoshC2_Project but keep it hard coded and created on install
+* Add message to Config.py saying don't edit this one then remove that line in copied version
+* Parse Config file on server start and run docker with that port forwarded so don't have to pass it as arg if not 443
+* Expand on docker commands in readme
+* Update documentation on readthedocs
